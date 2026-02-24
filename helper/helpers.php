@@ -1,0 +1,18 @@
+<?php
+function display_error($errors) {
+    $display = '<ul class="big danger">';
+    foreach ($errors as $error) {
+        $display .= '<li class="text danger">' . $error . '</li>';
+    }
+    $display .= '</ul>';
+    return $display;
+}
+
+function sanitize($dirty) {
+    return htmlentities($dirty, ENT_QUOTES, 'UTF-8');
+}
+
+function money($number) {
+    return 'R' . number_format($number, 2); // Updated to South African Rand symbol
+}
+?>

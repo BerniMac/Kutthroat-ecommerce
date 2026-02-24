@@ -1,0 +1,223 @@
+body {
+  /* Padding top is handled by Bootstrap's sticky-top, 
+     but we keep a small buffer if needed */
+  padding-top: 0; 
+  font-family: 'Poppins', sans-serif; /* Matches the font we added in head.php */
+  background-color: #f8f9fa; /* Light grey modern background */
+  color: #333;
+}
+
+/* ===========================
+   2. Navbar Styling
+   =========================== */
+/* We target the class .navbar instead of #navbar to match Bootstrap 5 */
+.navbar {
+  background-color: #ffffff; /* Clean white bar */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Soft modern shadow */
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  color: #800000 !important; /* Your Brand Maroon */
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.nav-link:hover {
+  color: #800000 !important;
+}
+
+/* Cart Button */
+.btn-dark {
+  background-color: #000000;
+  border: none;
+  padding: 8px 20px;
+}
+
+/* ===========================
+   3. Hero / Background Section
+   =========================== */
+#background-image {
+  position: relative;
+  width: 100%;
+  min-height: 600px; /* Use min-height to allow content to grow */
+  
+  /* Modern Background Handling */
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* Key fix: scales image proportionally */
+  background-attachment: fixed; /* Parallax effect */
+  
+  /* Flexbox to center any text inside the hero */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+/* Optional overlay to make text readable on top of images */
+#background-image::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Ensure content sits above the overlay */
+#background-image > div {
+  z-index: 2;
+  position: relative;
+}
+
+/* ===========================
+   4. Decorative Images (The collage)
+   =========================== */
+/* Modern approach: We hide these specific absolute/floating 
+   images on mobile because they block text, and show them 
+   only on larger screens (Desktop).
+*/
+
+#image1, #image2 {
+  display: none; /* Hidden by default on mobile */
+}
+
+/* "min-width: 992px" means these rules only apply to Desktops/Laptops */
+@media (min-width: 992px) {
+  #image1 {
+    display: block;
+    position: absolute;
+    width: 40%; /* Responsive width */
+    height: 350px;
+    background-image: url(images/shopifygun.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    bottom: -50px; /* Hanging slightly off the hero section looks cool */
+    left: 5%;
+    z-index: 3;
+    border-radius: 8px; /* Soft corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* 3D effect */
+  }
+
+  #image2 {
+    display: block;
+    position: absolute;
+    width: 30%;
+    height: 300px;
+    background-image: url(../images/GunStore.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    top: 20%;
+    right: 5%;
+    z-index: 3;
+    animation: float 6s ease-in-out infinite; /* Small floating animation */
+  }
+}
+
+/* ===========================
+   5. Animations
+   =========================== */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===========================
+   6. Product & Footer Styles
+   =========================== */
+.product-card {
+  /* Ensure the cards from previous step look good */
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.footer {
+  background-color: #800000;
+  color: #fff;
+  padding: 60px 0;
+  margin-top: 100px;
+}
+/* body{
+  padding-top:50px;
+}
+
+#navbar{
+  background-color: #800000;
+}
+
+#text{
+  background-color:#000000;
+  color: #ffffff;
+}
+#background-image{
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 600px;
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 700px;
+  background-position: top center;
+  background-attachment: fixed;
+}
+
+#image1{
+  position: absolute;
+  width:100%;
+  height:350px;
+  background-image: url(../images/ecommerce2.jpg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 50% 200px;
+  top:-100px;
+  margin-top: -25px;
+}
+#image2{
+  position: absolute;
+  width:100%;
+  height:300px;
+  background-image: url(../images/square.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: auto 200px;
+  top:8%;
+  margin-top: 0px;
+  margin-left: -100px
+} */
+
+/* #cartbutton{
+  background-color:#000000;
+  color: #ffffff; */
+
+/* #images{
+  width: auto;
+  height: 200px;
+} */
+/* #quantity{
+  margin-left: -16px;
+}
+
+#quantity-label{
+ margin-left: -16px;
+} */
+
+/* img.details{
+  width: auto;
+  margin: 15px auto;
+  height: 200px;
+} */
