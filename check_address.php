@@ -1,5 +1,6 @@
 <?php
-  require_once $_SERVER['DOCUMENT_ROOT'].'/tutorial/core/init.php';
+  require_once 'core/init.php';
+  //require_once $_SERVER['DOCUMENT_ROOT'].'/tutorial/core/init.php';
   $name = sanitize($_POST['full_name']);
   $email = sanitize($_POST['email']);
   $street = sanitize($_POST['street']);

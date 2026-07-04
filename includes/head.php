@@ -1,4 +1,3 @@
-
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,28 +51,50 @@
 <body> -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Red Stone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KTB Kutthroat Ammunition</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css">
   <link rel="stylesheet" href="css/main.css">
 
+  <!-- jQuery - must be first before Bootstrap and Stripe -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Fotorama -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+  <!-- Stripe JS v2 -->
+  <script src="https://js.stripe.com/v2/"></script>
+
+  <!-- Set Stripe publishable key -->
+  <?php if (defined('STRIPE_PUBLIC')): ?>
+    <script>
+      Stripe.setPublishableKey('<?= STRIPE_PUBLIC; ?>');
+    </script>
+  <?php endif; ?>
+
+</head>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa; /* Light gray background */
+      background-color: #f8f9fa;
+      /* Light gray background */
     }
 
     /* Navbar Styling */
     .navbar {
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
+
     .navbar-brand {
       font-weight: 700;
       color: #800000 !important;
@@ -85,7 +106,8 @@
       position: relative;
       width: 100%;
       height: 400px;
-      background: #333; /* Fallback */
+      background: #333;
+      /* Fallback */
       overflow: hidden;
       margin-bottom: 40px;
       display: flex;
@@ -99,28 +121,33 @@
       border-radius: 12px;
       background: #fff;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       height: 100%;
       overflow: hidden;
     }
+
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     }
+
     .product-card img {
       max-height: 200px;
       object-fit: contain;
       padding: 20px;
       width: 100%;
     }
+
     .card-body {
       text-align: center;
     }
+
     .price-tag {
       font-size: 1.2rem;
       font-weight: bold;
       color: #800000;
     }
+
     .list-price {
       color: #999;
       font-size: 0.9rem;
@@ -135,5 +162,6 @@
       text-align: center;
     }
   </style>
-</head>
-<body>
+  </head>
+
+  <body>

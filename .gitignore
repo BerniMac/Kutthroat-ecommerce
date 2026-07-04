@@ -1,0 +1,15 @@
+# Sensitive credentials
+config.php
+
+# Composer dependencies
+vendor/
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
