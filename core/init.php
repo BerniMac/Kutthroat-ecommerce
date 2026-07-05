@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-// Load config first - contains DB credentials and constants
-require_once $_SERVER['DOCUMENT_ROOT'] . '/tutorial/config.php';
+require_once dirname(__DIR__) . '/config.php';
 
 // Database connection using constants from config.php
 $DBConnect = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -12,8 +11,12 @@ if ($DBConnect->connect_errno) {
     die('Database connection failed: ' . $DBConnect->connect_error);
 }
 
-// Include helpers
-require_once BASEURL . 'helper/helpers.php';
+
+ require_once dirname(__DIR__) . '/helper/helpers.php'; 
+
+if (!defined('BASEURL')) {
+    define('BASEURL', dirname(__DIR__) . '/');
+}
 
 // Retrieve cart cookie if set
 $cart_id = '';
