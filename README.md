@@ -12,7 +12,7 @@ A PHP e-commerce store built with Bootstrap 5, MySQL and Stripe payments.
 ## Setup
 
 ### 1. Clone the repo
-git clone https://github.com/yourusername/tutorial.git
+git clone https://github.com/BerniMac/Kutthroat-ecommerce.git
 
 ### 2. Install dependencies
 composer install
